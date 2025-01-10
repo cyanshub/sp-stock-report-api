@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express')
 const path = require('path')
 const methodOverride = require('method-override')
+const cors = require('cors')
 
 // 設定應用程式
 const app = express()
@@ -18,6 +19,7 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(methodOverride('_method'))
+app.use(cors()) // 應對瀏覽器 Cross-Origin Resource Sharing 政策
 
 // 設計路由
 router.get('/', (req, res) => {
