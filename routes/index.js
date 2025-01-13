@@ -10,6 +10,7 @@ const { apiErrorHandler } = require('../middleware/error-handler')
 // 設計路由: 主要功能
 router.get('/', (req, res, next) => res.send('Stock report app is running.'))
 router.get('/stocks/:stockSymbol', stockController.getStock)
+router.get('/stocks/:stockSymbol/download', stockController.downloadStock)
 
 // 設計路由: 錯誤處理
 router.use('/', apiErrorHandler)
