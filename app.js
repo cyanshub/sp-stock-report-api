@@ -9,6 +9,7 @@ const path = require('path')
 const methodOverride = require('method-override')
 const cors = require('cors')
 const apis = require('./routes')
+const { backgroudProcesser } = require('./helpers/background-helpers')
 
 // 設定應用程式
 const app = express()
@@ -29,3 +30,6 @@ app.use('/', (req, res) => res.redirect('/api')) // 將未匹配路由重導向�
 app.listen(port, () => {
   console.info(`The App is listening on: http://localhost:${port} `)
 })
+
+// 掛載執行處理程序
+backgroudProcesser()
