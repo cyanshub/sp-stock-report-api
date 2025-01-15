@@ -13,7 +13,7 @@ const { backgroudProcesser } = require('./helpers/background-helpers')
 
 // 設定應用程式
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000 // 讓前端用 port 3000
 
 // 設計 middleware
 app.use('/', express.static(path.join(__dirname, 'public')))
